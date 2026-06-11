@@ -13,7 +13,7 @@
 */
 
 /*
-© [2026] Microchip Technology Inc. and its subsidiaries.
+Â© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -40,7 +40,7 @@
 */
 
 #define NUMBER_OF_ROWS        8
-#define NUMBER_OF_COLUMNS     32
+#define NUMBER_OF_COLUMNS     8
 #define NUMBER_OF_LEDS        ( NUMBER_OF_ROWS*NUMBER_OF_COLUMNS )
 #define RGB_IMAGE_SIZE        ( NUMBER_OF_LEDS * 3 )
 
@@ -79,28 +79,53 @@ int main(void)
 
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
-    
+    // eLogo, hLogo, iLogo, nLogo, rLogo, sLogo, tLogo, uLogo, vLogo  
 
     while(1)
     {
-        CLBSWINLbits.CLBSWIN0 = 0; // DEMUX out0, SPI routed to PPSOUT pins
+       /* CLBSWINLbits.CLBSWIN0 = 0; // DEMUX out0, SPI routed to PPSOUT pins
         __delay_ms(100);
         
-        WriteLEDsString(imageR);
+        WriteLEDsString(eLogo);
         __delay_ms(100);
-        
-        WriteLEDsString(imageG);
-        __delay_ms(100);
-        
 
+        */
         CLBSWINLbits.CLBSWIN0 = 1; // DEMUX out1, SPI routed to SPI_to_WS2812 CLB circuit
         __delay_ms(100);
         
-        WriteLEDsString(imageR);
+        WriteLEDsString(hLogo); //h
         __delay_ms(1000);
-        
-        WriteLEDsString(imageG);
+        WriteLEDsString(iLogo); //i
         __delay_ms(1000);
-
-    }    
+        WriteLEDsString(tLogo); //t
+        __delay_ms(1000);
+        WriteLEDsString(iLogo); //i
+        __delay_ms(1000);
+        WriteLEDsString(tLogo); //t
+        __delay_ms(1000);
+        WriteLEDsString(uLogo); //u
+        __delay_ms(1000);
+        WriteLEDsString(nLogo); //n
+        __delay_ms(1000);
+        WriteLEDsString(iLogo); //i
+        __delay_ms(1000);
+        WriteLEDsString(vLogo); //v
+        __delay_ms(1000);
+        WriteLEDsString(eLogo);//e
+        __delay_ms(1000);
+        WriteLEDsString(rLogo); //r
+        __delay_ms(1000);
+        WriteLEDsString(sLogo);//s
+        __delay_ms(1000);
+        WriteLEDsString(iLogo); //i
+        __delay_ms(1000);
+        WriteLEDsString(tLogo); //t
+        __delay_ms(1000);
+        WriteLEDsString(eLogo);//e
+        __delay_ms(1000);
+        WriteLEDsString(sLogo);//s
+        __delay_ms(1000);
+        WriteLEDsString(iLogo); //i
+        __delay_ms(1000); 
+    }   
 }
